@@ -1,7 +1,6 @@
 #Correios SDK PHP
 
 ```
-.
 ├── composer.json
 ├── composer.lock
 ├── docker-compose.yml

@@ -1,0 +1,33 @@
+{
+    "name": "cloudonline/lib-correios",
+    "type": "library",
+    "description": "Cloud Online Pay SDK (PHP)",
+    "version": "0.1.0",
+    "require": {
+        "php": "~5.6|~7.0",
+        "guzzlehttp/guzzle": "~6.2"
+    },
+    "require-dev": {
+        "codeclimate/php-test-reporter": "~0.3",
+        "mockery/mockery": "~0.9",
+        "phpunit/phpunit": "~5.0",
+        "squizlabs/php_codesniffer": "~2.3"
+    },
+    "autoload": {
+        "psr-4": {
+           "Correios\\": "src/correios/",
+           "Log\\": "src/logs/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Correios\\": "tests",
+            "Log\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --colors=always",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src"
+    }
+}

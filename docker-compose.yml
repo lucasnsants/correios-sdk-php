@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/app
+      - ./site.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - app-network
+  php:
+    image: php:fpm
+    volumes:
+      - .:/app
+    networks:
+      - app-network
+  composer:
+    restart: 'no'
+    image: composer/composer:php7
+    command: install
+    volumes:
+      - .:/app
+
+networks:
+  app-network:
+    driver: bridge

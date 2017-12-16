@@ -2,7 +2,7 @@
     "name": "lucassant0s/correios-sdk-php",
     "type": "library",
     "description": "Cloud Online Correios SDK (PHP)",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "require": {
         "php": "~5.6|~7.0",
         "guzzlehttp/guzzle": "~6.2"

@@ -17,7 +17,7 @@ use Log\LoggerInterface;
 class Freight implements FreightInterface, LoggerAwareInterface, LoggerInterface
 {
 /**
-     * Payload padrão.
+     * Payload standard.
      *
      * @var array
      */
@@ -39,14 +39,14 @@ class Freight implements FreightInterface, LoggerAwareInterface, LoggerInterface
     ];
 
     /**
-     * Payload da requisição.
+     * Request playload.
      *
      * @var array
      */
     protected $payload = [];
 
     /**
-     * Objetos a serem transportados.
+     * Send objects.
      *
      * @var array
      */
@@ -82,7 +82,7 @@ class Freight implements FreightInterface, LoggerAwareInterface, LoggerInterface
     }
 
     /**
-     * CEP de origem.
+     * Origin CEO.
      *
      * @param  string $zipCode
      *
@@ -96,7 +96,7 @@ class Freight implements FreightInterface, LoggerAwareInterface, LoggerInterface
     }
 
     /**
-     * CEP de destino.
+     * Destination CEP.
      *
      * @param  string $zipCode
      *
@@ -110,7 +110,7 @@ class Freight implements FreightInterface, LoggerAwareInterface, LoggerInterface
     }
 
     /**
-     * Serviços a serem calculados.
+     * Calculates Services.
      *
      * @param  int ...$services
      *
@@ -124,11 +124,11 @@ class Freight implements FreightInterface, LoggerAwareInterface, LoggerInterface
     }
 
     /**
-     * Código administrativo junto à ECT. O código está disponível no
-     * corpo do contrato firmado com os Correios.
-     *
-     * Senha para acesso ao serviço, associada ao seu código administrativo,
-     * a senha inicial corresponde aos 8 primeiros dígitos do CNPJ informado no contrato.
+     * Administrative code with ECT. The code is available on the
+     * body of the contract signed with the Post Office.
+     *
+     * Password for access to the service, associated with your administrative code,
+     * the initial password corresponds to the first 8 digits of the CNPJ informed in the contract.
      *
      * @param  string $code
      * @param  string $password
@@ -144,7 +144,7 @@ class Freight implements FreightInterface, LoggerAwareInterface, LoggerInterface
     }
 
     /**
-     * Formato da encomenda (Caixa, pacote, rolo, prisma ou envelope).
+     * Formato of encomenda (Caixa, pacote, rolo, prisma or envelope).
      *
      * @param  int $format
      *
@@ -158,7 +158,7 @@ class Freight implements FreightInterface, LoggerAwareInterface, LoggerInterface
     }
 
     /**
-     * Indique se a encomenda será entregue com o serviço adicional mão própria.
+     * Indicate if the order will be delivered with the additional service by hand.
      *
      * @param  bool $useOwnHand
      *
@@ -187,7 +187,7 @@ class Freight implements FreightInterface, LoggerAwareInterface, LoggerInterface
     }
 
     /**
-     * Dimensões, peso e quantidade do item.
+     * Dimensions, weight and quantity of the item.
      *
      * @param  int|float $width
      * @param  int|float $height
@@ -205,7 +205,7 @@ class Freight implements FreightInterface, LoggerAwareInterface, LoggerInterface
     }
 
     /**
-     * Calcula preços e prazos junto ao Correios.
+     * Calculates prices and deadlines with the Post Office.
      *
      * @return array
      */
@@ -232,7 +232,7 @@ class Freight implements FreightInterface, LoggerAwareInterface, LoggerInterface
     }
 
     /**
-     * Calcula largura, altura, comprimento, peso e volume do frete no payload.
+     * Calculates freight width, height, length, weight and volume in payload.
      *
      * @return self
      */
@@ -250,7 +250,7 @@ class Freight implements FreightInterface, LoggerAwareInterface, LoggerInterface
     }
 
     /**
-     * Calcula e retorna a maior largura entre todos os itens.
+     * Calculates and returns the largest width among all items.
      *
      * @return int|float
      */
@@ -262,7 +262,7 @@ class Freight implements FreightInterface, LoggerAwareInterface, LoggerInterface
     }
 
     /**
-     * Calcula e retorna a soma total da altura de todos os itens.
+     * Calculates and returns the sum total of the height of all items.
      *
      * @return int|float
      */

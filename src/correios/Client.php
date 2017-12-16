@@ -5,7 +5,9 @@ namespace Correios;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Client as HttpClient;
 use Correios\Freight;
+use Correios\ZipCode;
 use Correios\FreightInterface;
+use Correios\ZipCodeInterface;
 
 
 class Client implements LoggerAwareInterface, LoggerInterface
@@ -16,6 +18,13 @@ class Client implements LoggerAwareInterface, LoggerInterface
      * @var \Correios\FreightInterface
      */
     protected $freight;
+
+    /**
+     * Serviço de CEP.
+     *
+     * @var \Correios\ZipCodeInterface
+     */
+    protected $zipcode;
 
     /**
      * Cria uma nova instância da classe Client.
@@ -39,5 +48,15 @@ class Client implements LoggerAwareInterface, LoggerInterface
     public function freight()
     {
         return $this->freight;
+    }
+
+    /**
+     * Serviço de CEP dos Correios.
+     *
+     * @return \Correios\ZipCodeInterface
+     */
+    public function zipcode()
+    {
+        return $this->zipcode;
     }
 }

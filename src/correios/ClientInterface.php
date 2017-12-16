@@ -5,7 +5,7 @@ namespace Correios;
 interface ClientInterface
 {
     /**
-     * Serviço de frete dos Correios.
+     * Service freight of Correios.
      *
      * @return \Correios\FreightInterface
      */

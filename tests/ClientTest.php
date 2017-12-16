@@ -19,12 +19,18 @@ class ClientTest extends TestCase
 
         $this->correios = new Client(
             Mockery::mock(ClientInterface::class),
-            Mockery::mock(FreightInterface::class)
+            Mockery::mock(FreightInterface::class),
+            Mockery::mock(ZipCodeInterface::class)
         );
     }
 
     public function testFreightService()
     {
         $this->assertInstanceOf(FreightInterface::class, $this->correios->freight());
+    }
+
+    public function testZipCodeService()
+    {
+        $this->assertInstanceOf(ZipCodeInterface::class, $this->correios->zipcode());
     }
 }

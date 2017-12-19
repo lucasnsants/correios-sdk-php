@@ -10,11 +10,9 @@ use Correios\Service;
 use Correios\WebService;
 use Correios\PackageType;
 use Correios\FreightInterface;
-use Log\LoggerAwareInterface;
-use Log\LoggerInterface;
 
 
-class Freight implements FreightInterface, LoggerAwareInterface, LoggerInterface
+class Freight implements FreightInterface
 {
 /**
      * Payload standard.

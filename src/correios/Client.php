@@ -34,10 +34,12 @@ class Client
      */
     public function __construct(
         ClientInterface $http = null,
-        FreightInterface $freight = null
+        FreightInterface $freight = null,
+        ZipCodeInterface $zipcode = null
     ) {
         $this->http = $http ?: new HttpClient;
         $this->freight = $freight ?: new Freight($this->http);
+        $this->zipcode = $zipcode ?: new ZipCode($this->http);
     }
 
     /**

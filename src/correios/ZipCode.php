@@ -1,6 +1,6 @@
 <?php
 
-namespace Correios\Services;
+namespace Correios;
 
 use GuzzleHttp\ClientInterface;
 use Correios\WebService;

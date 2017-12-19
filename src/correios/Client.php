@@ -31,6 +31,7 @@ class Client
      *
      * @param \GuzzleHttp\ClientInterface|null  $http
      * @param \Correios\FreightInterface|null $freight
+     * @param \Correios\ZipCodeInterface|null $zipcode
      */
     public function __construct(
         ClientInterface $http = null,

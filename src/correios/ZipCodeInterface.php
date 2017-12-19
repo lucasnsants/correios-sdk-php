@@ -1,6 +1,6 @@
 <?php
 
-namespace Correios\Contracts;
+namespace Correios;
 
 interface ZipCodeInterface
 {

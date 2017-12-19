@@ -10,7 +10,7 @@ use Correios\FreightInterface;
 use Correios\ZipCodeInterface;
 
 
-class Client implements LoggerAwareInterface, LoggerInterface
+class Client
 {
     /**
      * Serviço de frete.

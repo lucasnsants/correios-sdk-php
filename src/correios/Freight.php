@@ -327,7 +327,7 @@ class Freight implements FreightInterface
      *
      * @return array
      */
-    protected function fetchCorreiosServices(ResponseParser $response)
+    protected function fetchCorreiosServices(Response $response)
     {
         $xml = simplexml_load_string($response->getBody()->getContents());
         $results = json_decode(json_encode($xml->Servicos))->cServico;

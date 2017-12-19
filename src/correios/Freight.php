@@ -323,7 +323,7 @@ class Freight implements FreightInterface
     /**
      * Extrai todos os serviços retornados no XML de resposta dos Correios.
      *
-     * @param  \Correios\ResponseParser $response
+     * @param  \GuzzleHttp\Psr7\Response $response
      *
      * @return array
      */

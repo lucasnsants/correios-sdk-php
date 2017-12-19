@@ -8,7 +8,7 @@ class ZipCodeTest extends TestCase
 {
     public function testNotFoundZipCode()
     {
-        $body = __DIR__.'./XMlSamples/ZipCodeNotFoundErrorResponse.xml';
+        $body = './XMlSamples/ZipCodeNotFoundErrorResponse.xml';
         $http = $this->mockHttpClient($body);
 
         $zipcode = new ZipCode($http);
@@ -20,7 +20,7 @@ class ZipCodeTest extends TestCase
 
     public function testFindAddressByZipCode()
     {
-        $body = __DIR__.'./XMlSamples/ZipCodeResponse.xml';
+        $body = './XMlSamples/ZipCodeResponse.xml';
         $http = $this->mockHttpClient($body);
 
         $zipcode = new ZipCode($http);

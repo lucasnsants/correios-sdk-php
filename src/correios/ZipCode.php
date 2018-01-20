@@ -168,7 +168,7 @@ class ZipCode implements ZipCodeInterface
     protected function fetchErrorMessage()
     {
         return [
-            'error' => $this->messages($this->parsedXML['Fault']['faultstring']),
+            'error' => $this->parsedXML['Fault']['faultstring'],
         ];
     }
 

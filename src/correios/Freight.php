@@ -241,7 +241,7 @@ class Freight implements FreightInterface
             $this->payload['nVlAltura'] = $this->height();
             $this->payload['nVlComprimento'] = $this->length();
             $this->payload['nVlDiametro'] = 0;
-            $this->payload['nVlPeso'] = $this->useWeightOrVolume();
+            $this->payload['nVlPeso'] = $this->weight();
         }
 
         return $this;

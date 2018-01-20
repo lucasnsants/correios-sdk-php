@@ -6,7 +6,7 @@
         "type": "package",
         "package": {
             "name": "lucassant0s/correios-sdk-php",
-            "version": "1.0.11",
+            "version": "1.0.12",
             "source": {
                     "url": "git@github.com:lucassant0s/correios-sdk-php.git",
                 "type": "git",

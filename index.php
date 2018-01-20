@@ -8,4 +8,4 @@ require 'vendor/autoload.php';
 
 $correios = new Client;
 
-print_r($correios->zipcode()->find('05581001'));
+print_r($correios->zipcode()->find('05581-001'));

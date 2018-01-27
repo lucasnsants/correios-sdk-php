@@ -267,7 +267,7 @@ class Freight implements FreightInterface
     protected function height()
     {
         return array_sum(array_map(function ($item) {
-            return $item['height'] * $item['quantity'];
+            return $item['height'];
         }, $this->items));
     }
 
@@ -291,7 +291,7 @@ class Freight implements FreightInterface
     protected function weight()
     {
         return array_sum(array_map(function ($item) {
-            return $item['weight'] * $item['quantity'];
+            return $item['weight'];
         }, $this->items));
     }
 

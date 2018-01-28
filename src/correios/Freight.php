@@ -26,10 +26,10 @@ class Freight implements FreightInterface
         'sCepOrigem' => '',
         'sCepDestino' => '',
         'nCdFormato' => PackageType::BOX,
-        'nVlLargura' => 0,
-        'nVlAltura' => 0,
+        'nVlLargura' => 11,
+        'nVlAltura' => 2,
         'nVlPeso' => 0,
-        'nVlComprimento' => 0,
+        'nVlComprimento' => 16,
         'nVlDiametro' => 0,
         'sCdMaoPropria' => 'N',
         'nVlValorDeclarado' => 0,
@@ -49,6 +49,11 @@ class Freight implements FreightInterface
      * @var array
      */
     protected $items = [];
+
+    private $width;
+    private $height;
+    private $length;
+    private $weight;
 
     /**
      * HTTP Client.
@@ -195,9 +200,12 @@ class Freight implements FreightInterface
      *
      * @return self
      */
-    public function item($width, $height, $length, $weight, $quantity = 1)
+    public function item($width, $height, $length, $weight)
     {
-        $this->items[] = compact('width', 'height', 'length', 'weight', 'quantity');
+        $this->width = $width;
+        $this->height = $height;
+        $this->length = $length;
+        $this->weight = $weight;
 
         return $this;
     }
@@ -236,63 +244,13 @@ class Freight implements FreightInterface
      */
     protected function setFreightDimensionsOnPayload()
     {
-        if ($this->items) {
-            $this->payload['nVlLargura'] = $this->width();
-            $this->payload['nVlAltura'] = $this->height();
-            $this->payload['nVlComprimento'] = $this->length();
+            $this->payload['nVlLargura'] = $this->width;
+            $this->payload['nVlAltura'] = $this->height;
+            $this->payload['nVlComprimento'] = $this->length;
             $this->payload['nVlDiametro'] = 0;
-            $this->payload['nVlPeso'] = $this->weight();
-        }
+            $this->payload['nVlPeso'] = $this->weight;
 
         return $this;
-    }
-
-    /**
-     * Calculates and returns the largest width among all items.
-     *
-     * @return int|float
-     */
-    protected function width()
-    {
-        return max(array_map(function ($item) {
-            return $item['width'];
-        }, $this->items));
-    }
-
-    /**
-     * Calculates and returns the sum total of the height of all items.
-     *
-     * @return int|float
-     */
-    protected function height()
-    {
-        return array_sum(array_map(function ($item) {
-            return $item['height'];
-        }, $this->items));
-    }
-
-    /**
-     * Calcula e retorna o maior comprimento entre todos os itens.
-     *
-     * @return int|float
-     */
-    protected function length()
-    {
-        return max(array_map(function ($item) {
-            return $item['length'];
-        }, $this->items));
-    }
-
-    /**
-     * Calcula e retorna a soma total do peso de todos os itens.
-     *
-     * @return int|float
-     */
-    protected function weight()
-    {
-        return array_sum(array_map(function ($item) {
-            return $item['weight'];
-        }, $this->items));
     }
 
     /**

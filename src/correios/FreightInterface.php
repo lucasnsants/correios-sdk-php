@@ -91,7 +91,7 @@ interface FreightInterface
      *
      * @return self
      */
-    public function item($width, $height, $length, $weight, $quantity = 1);
+    public function item($width, $height, $length, $weight);
 
     /**
      * Calcula preços e prazos junto ao Correios.

@@ -7,7 +7,7 @@ abstract class WebService
     /**
      * URL of SIGEP webservice Correios.
      */
-    const SIGEP = 'https://apphom.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl';
+    const SIGEP = 'https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente';
 
     /**
      * URL of webservice dos Correios for calculate de price e deadline.
